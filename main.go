@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	. "mesos/metrics"
-	. "mesos/services"
+	. "github.com/axelspringer/mesos-to-cloudwatch/metrics"
+	. "github.com/axelspringer/mesos-to-cloudwatch/services"
 
 	"github.com/aws/aws-sdk-go-v2/aws/external"
 	"github.com/urfave/cli"

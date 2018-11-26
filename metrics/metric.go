@@ -1,7 +1,7 @@
 package metrics
 
 import (
-	. "mesos/services"
+	. "github.com/axelspringer/mesos-to-cloudwatch/services"
 
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatch"
 	"github.com/urfave/cli"
