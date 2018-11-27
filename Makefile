@@ -26,7 +26,7 @@ build/local:
 deploy/local: build/linux
 	docker restart `docker ps | grep "/mesos-to-cloudwatch" | awk '{printf $$1}'`
 
-build/linux: test/local
+build/linux:
 	$(GO) get ./...
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GO) build -ldflags "-X main.Version=$(VERSION)" -o "$(BIN)_linux" $(GOFLAGS)  main.go
 
