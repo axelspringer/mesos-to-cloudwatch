@@ -7,8 +7,3 @@ services:
 script:
 - make build/docker
 - make push/docker
-
-addons:
-  apt:
-   packages:
-     - docker-ce
