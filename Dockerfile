@@ -1,6 +1,5 @@
 # BUILD
-#FROM golang:latest as build
-FROM golang:latest
+FROM golang:latest as build
 
 LABEL maintainer="david.ullrich@spring-media.de"
 
