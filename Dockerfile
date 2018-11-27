@@ -10,14 +10,11 @@ COPY . .
 RUN echo $GOPATH
 RUN go get -d -v ./...
 
-#RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o swerve -v -ldflags "-extldflags '-static'" -a -installsuffix cgo main.go
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o mesos-to-cloudwatch main.go
 
 # RUNTIME
-#FROM scratch
+FROM scratch
 
-#MAINTAINER Jan Michalowsky <sejamich@googlemail.com>
-
-#COPY --from=build /go/src/github.com/axelspringer/swerve/swerve /swerve
+COPY --from=build /go/src/github.com/axelspringer/mesos-to-cloudwatch/mesos-to-cloudwatch /mesos-to-cloudwatch
 RUN cp /go/src/github.com/axelspringer/mesos-to-cloudwatch/mesos-to-cloudwatch /mesos-to-cloudwatch
 CMD [ "/mesos-to-cloudwatch" ]
