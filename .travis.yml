@@ -8,7 +8,7 @@ script:
 - make build/docker
 - make push/docker
 
-  addons:
+addons:
   apt:
-    packages:
-      - docker-ce
+   packages:
+     - docker-ce
